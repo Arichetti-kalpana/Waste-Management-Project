@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/" class="logo">WASTE CLASSIFICATION</a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/predict_page">Predict</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container classification-page">
+        <h2 class="section-title">Image Classification</h2>
+
+        <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form">
+            <label for="file_upload">Upload Your Image:</label>
+            <input type="file" name="file" id="file_upload" required>
+            <button type="submit" class="btn-submit">Predict</button>
+        </form>
+
+        {% if prediction_made %}
+            <div class="result-box">
+                <h3 class="result-title">Cleanliness Detection</h3>
+                <p>Result of municipal waste classification</p>
+
+                {% if image_path %}
+                <div class="uploaded-image-container">
+                    <img src="{{ image_path }}" alt="Uploaded Waste Image" class="uploaded-image">
+                </div>
+                {% endif %}
+                <div class="classification-summary">
+                    {% for class_name, probability in results.items() %}
+                        <p>
+                            {{ class_name }}: ({{ '%.4f' | format(probability) }}%)
+                        </p>
+                    {% endfor %}
+                </div>
+
+                <h4 class="predicted-class">Predicted Class: <span>{{ predicted_class_name }}</span></h4>
+                
+            </div>
+        {% endif %} 
+        </div>
+</body>
+</html>

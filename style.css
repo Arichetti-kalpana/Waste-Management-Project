@@ -1,0 +1,198 @@
+/* Basic Reset and Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    text-align: center;
+    color: #555;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 30px;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: white;
+    padding: 15px 10%;
+    font-size: 1.1em;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #6c5ce7; /* Example hover color */
+}
+
+/* --- Buttons --- */
+.btn-primary, .btn-secondary, .btn-predict, .btn-send {
+    background-color: #4CAF50; /* Green color from image */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover, .btn-predict:hover, .btn-send:hover {
+    background-color: #45a049;
+}
+
+.btn-secondary {
+    background-color: #6c5ce7; /* Purple/pink accent from image */
+}
+
+.btn-secondary:hover {
+    background-color: #5d48d6;
+}
+
+
+/* --- About Us Page (about.html) --- */
+.about-us .team-info {
+    display: flex;
+    gap: 40px;
+}
+
+.about-us .left-col, .about-us .right-col {
+    flex: 1;
+}
+
+.about-us ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-us li::before {
+    content: "✓";
+    color: #4CAF50;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* --- Contact Us Page (contact.html) --- */
+.contact-grid {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.contact-form {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input[type="text"], 
+.contact-form input[type="email"], 
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-info .icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+/* --- Prediction Page (predict.html) --- */
+.upload-form {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.upload-form input[type="file"] {
+    margin-right: 20px;
+}
+
+/* Result Box Styling */
+.result-box {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 30px auto;
+}
+
+.result-title {
+    color: #6c5ce7;
+    margin-bottom: 10px;
+}
+
+.classification-summary p {
+    font-size: 1.1em;
+    background: #f1f1f1;
+    padding: 8px;
+    margin: 5px 0;
+    border-left: 4px solid #4CAF50;
+}
+
+.predicted-class {
+    color: #4CAF50;
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+.uploaded-image-container {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.uploaded-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px; 
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    object-fit: contain; 
+}
